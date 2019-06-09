@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "mern_devconnector",
   "version": "1.0.0",
   "description": "nodejs server using Express",
   "main": "server.js",

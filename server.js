@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 // connect database
 connectDB();
 
-// init middleware
+// init middleware to parse request into JSON
 app.use(express.json({ extended: false }));
 
 // define routes
