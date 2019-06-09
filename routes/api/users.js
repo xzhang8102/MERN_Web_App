@@ -62,7 +62,9 @@ router.post(
       // sent jwt token
       jwt.sign(
         {
-          user: { id: user.id }
+          user: {
+            id: user.id
+          }
         },
         config.get('jwtToken'),
         {
