@@ -59,13 +59,15 @@ router.post(
       // save user
       await user.save();
 
+      const payload = {
+        user: {
+          id: user.id
+        }
+      };
+
       // sent jwt token
       jwt.sign(
-        {
-          user: {
-            id: user.id
-          }
-        },
+        payload,
         config.get('jwtToken'),
         {
           expiresIn: '360000'
