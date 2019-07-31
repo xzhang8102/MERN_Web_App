@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 import styles from '../styles/LandingStyles';
-// import SignIn from '../components/SignIn';
+import SignIn from '../components/SignIn';
 // import SignUp from '../components/SignUp';
 
 class Landing extends Component {
@@ -10,8 +10,8 @@ class Landing extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Paper elevation={3} className={classes.paper}>
-          {/* <SignIn /> */}
+        <Paper elevation={4} className={classes.paper}>
+          <SignIn />
         </Paper>
       </div>
     );

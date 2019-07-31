@@ -8,13 +8,13 @@ const styles = theme => ({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundImage: `url(${image})`,
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat'
   },
   paper: {
-    height: '80%',
-    width: '75%',
+    height: '90%',
+    width: '80%',
     display: 'flex',
-    overflow: 'hidden',
     opacity: 0.9
   }
 });
