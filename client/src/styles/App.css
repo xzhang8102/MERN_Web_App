@@ -1,8 +1,8 @@
 /* Global Styles */
 :root {
-  --primary-color: #17a2b8;
-  --dark-color: #343a40;
-  --light-color: #f4f4f4;
+  --primary-color: #b1b4ea;
+  --dark-color: #051321;
+  --light-color: #fefdfe;
   --danger-color: #dc3545;
   --success-color: #28a745;
 }
@@ -59,7 +59,7 @@ img {
 
 .lead {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .text-center {
@@ -130,11 +130,11 @@ img {
   display: inline-block;
   background: var(--light-color);
   color: #333;
-  padding: 0.4rem 1.3rem;
-  font-size: 1rem;
+  padding: 0.4rem 1.5rem;
+  font-size: 1.1rem;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
-  margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
 }
@@ -161,7 +161,7 @@ img {
 .badge-primary,
 .alert-primary {
   background: var(--primary-color);
-  color: #fff;
+  color: var(--light-color);
 }
 
 .btn-light,
@@ -169,7 +169,7 @@ img {
 .badge-light,
 .alert-light {
   background: var(--light-color);
-  color: #333;
+  color: var(--dark-color);
 }
 
 .btn-dark,
@@ -207,6 +207,14 @@ img {
 
 .btn:hover {
   opacity: 0.8;
+}
+
+.btn-with-arrow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 12rem;
+  padding-right: 0.8rem;
 }
 
 .bg-light,
@@ -300,16 +308,17 @@ button {
 
 /* Navbar */
 .navbar {
+  font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 2rem;
+  padding: 1rem 1.3rem;
   position: fixed;
   z-index: 1;
   width: 100%;
-  top: 0;
-  border-bottom: solid 1px var(--primary-color);
-  opacity: 0.9;
+  border: none;
+  border-radius: 0.4rem;
+  background: transparent;
 }
 
 .navbar ul {
@@ -317,13 +326,14 @@ button {
 }
 
 .navbar a {
-  color: #fff;
+  color: var(--primary-color);
+  font-weight: 600;
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
 
 .navbar a:hover {
-  color: var(--primary-color);
+  color: var(--dark-color);
 }
 
 .navbar .welcome span {
@@ -334,7 +344,7 @@ button {
 .landing {
   position: relative;
   background: url('../img/illustration_From_SAM_JI@dribbble.jpg') no-repeat
-    center center/80%;
+    center center/90%;
   height: 100vh;
 }
 
@@ -497,19 +507,6 @@ button {
 
   .hide-sm {
     display: none;
-  }
-
-  /* Text Styles */
-  .x-large {
-    font-size: 3rem;
-  }
-
-  .large {
-    font-size: 2rem;
-  }
-
-  .lead {
-    font-size: 1rem;
   }
 
   /* Navbar */
