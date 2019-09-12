@@ -14,7 +14,7 @@ const Register = () => {
   const onTypeChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onFormSubmit = e => {
+  const onFormSubmit = async e => {
     e.preventDefault();
     if (password !== password2) {
       console.log('Password does not match.');
@@ -27,8 +27,8 @@ const Register = () => {
     <section className="container-with-image">
       <div className="container">
         <h1 className="large text-primary">Sign Up</h1>
-        <p className="lead">
-          <i className="far fa-user"></i> Create Your Account
+        <p className="my-1">
+          Already have an account? <Link to="/login">Sign In</Link>
         </p>
         <form className="form" onSubmit={e => onFormSubmit(e)}>
           <div className="form-group">
@@ -77,9 +77,6 @@ const Register = () => {
           </div>
           <input type="submit" className="btn btn-primary" value="Register" />
         </form>
-        <p className="my-1">
-          Already have an account? <Link to="/login">Sign In</Link>
-        </p>
       </div>
     </section>
   );
