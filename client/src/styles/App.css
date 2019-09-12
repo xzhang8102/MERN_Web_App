@@ -333,7 +333,8 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  background: url('../img/showcase.jpg') no-repeat center center/cover;
+  background: url('../img/illustration_From_SAM_JI@dribbble.jpg') no-repeat
+    center center/80%;
   height: 100vh;
 }
 

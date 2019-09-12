@@ -7,12 +7,9 @@ const bcrypt = require('bcryptjs');
 const auth = require('../../middleware/auth');
 const User = require('../../models/User');
 
-//
 // @route       GET api/auth
-// @description Test Route
+// @description get user information with jwtToken
 // @access      Public
-//
-
 router.get('/', auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
@@ -23,12 +20,9 @@ router.get('/', auth, async (req, res) => {
   }
 });
 
-//
 // @route       POST api/auth
-// @description Authenticate User & GET token
+// @description login user
 // @access      Public
-//
-
 router.post(
   '/',
   [
@@ -46,7 +40,7 @@ router.post(
       let user = await User.findOne({ email });
       if (!user) {
         return res.status(400).json({
-          errors: [{ msg: 'Invalid Credentials.' }]
+          errors: [{ msg: 'Email not found.' }]
         });
       }
 
@@ -68,7 +62,7 @@ router.post(
         payload,
         config.get('jwtToken'),
         {
-          expiresIn: 360000
+          expiresIn: 3600
         },
         (err, token) => {
           if (err) throw err;

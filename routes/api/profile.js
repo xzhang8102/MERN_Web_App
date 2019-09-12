@@ -8,7 +8,6 @@ const User = require('../../models/User');
 // @route       GET api/profile/me
 // @description Get current user's profile
 // @access      Private
-
 router.get('/me', auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({ user: req.user.id }).populate(
@@ -28,7 +27,6 @@ router.get('/me', auth, async (req, res) => {
 // @route       POST api/profile
 // @description Create or update a user's profile
 // @access      Private
-
 router.post(
   '/',
   [
@@ -109,7 +107,6 @@ router.post(
 // @route       GET api/profile
 // @description Get all profiles
 // @access      Public
-
 router.get('/', async (req, res) => {
   try {
     const profiles = await Profile.find().populate('users', ['name', 'avatar']);
@@ -123,7 +120,6 @@ router.get('/', async (req, res) => {
 // @route       GET api/profile/user/:user_id
 // @description Get user profile
 // @access      Public
-
 router.get('/user/:user_id', async (req, res) => {
   try {
     const profile = await Profile.findOne({
@@ -141,9 +137,8 @@ router.get('/user/:user_id', async (req, res) => {
 });
 
 // @route       DELETE api/profile
-// @description deleter user profile
+// @description deleter profile, user and posts
 // @access      private
-
 router.delete('/', auth, async (req, res) => {
   try {
     //Delete posts
