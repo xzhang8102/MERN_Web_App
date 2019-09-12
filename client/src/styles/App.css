@@ -560,6 +560,11 @@ button {
     background-position: 20% center;
   }
 
+  .landing::after {
+    background-size: 150%;
+    opacity: 0.5;
+  }
+
   .hide-sm {
     display: none;
   }
