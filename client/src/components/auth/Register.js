@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { setAlert } from '../../redux/actions/alert';
+import { register } from '../../redux/actions/auth';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Register = ({ setAlert }) => {
+const Register = ({ setAlert, register }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,7 +23,7 @@ const Register = ({ setAlert }) => {
     if (password !== password2) {
       setAlert('Password does not match', 'danger');
     } else {
-      console.log(formData);
+      register({ name, email, password });
     }
   };
 
@@ -41,7 +42,6 @@ const Register = ({ setAlert }) => {
               name="name"
               value={name}
               onChange={e => onTypeChange(e)}
-              required
             />
           </div>
           <div className="form-group">
@@ -51,7 +51,6 @@ const Register = ({ setAlert }) => {
               name="email"
               value={email}
               onChange={e => onTypeChange(e)}
-              required
             />
             <small className="form-text">
               This site uses Gravatar so if you want a profile image, use a
@@ -64,7 +63,6 @@ const Register = ({ setAlert }) => {
               placeholder="Password"
               name="password"
               value={password}
-              minLength="6"
               onChange={e => onTypeChange(e)}
             />
           </div>
@@ -74,7 +72,6 @@ const Register = ({ setAlert }) => {
               placeholder="Confirm Password"
               name="password2"
               value={password2}
-              minLength="6"
               onChange={e => onTypeChange(e)}
             />
           </div>
@@ -86,10 +83,11 @@ const Register = ({ setAlert }) => {
 };
 
 Register.propTypes = {
-  setAlert: PropTypes.func.isRequired
+  setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-  { setAlert }
+  { setAlert, register }
 )(Register);
