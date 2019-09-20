@@ -12,14 +12,11 @@ import Register from './components/auth/Register';
 import Alert from './components/util/Alert';
 import './styles/App.css';
 
-if (localStorage.token) {
-  setAuthToken(localStorage.token);
-}
-
 const App = () => {
   useEffect(() => {
+    setAuthToken(localStorage.token);
     store.dispatch(loadUser());
-  });
+  }, []);
 
   return (
     <Provider store={store}>
