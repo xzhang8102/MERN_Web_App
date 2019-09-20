@@ -5,7 +5,8 @@ import {
   USER_LOADED,
   AUTH_ERROR,
   LOGIN_SUCCESS,
-  LOGIN_FAIL
+  LOGIN_FAIL,
+  LOGOUT
 } from './types';
 import { setAlert } from './alert';
 import setAuthToken from './util/setAuthToken';
@@ -82,5 +83,12 @@ export const login = (email, password) => {
         type: LOGIN_FAIL
       });
     }
+  };
+};
+
+// Log out user
+export const logout = () => {
+  return {
+    type: LOGOUT
   };
 };
