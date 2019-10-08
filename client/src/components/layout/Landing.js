@@ -2,27 +2,28 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Button } from 'antd';
+import '../../styles/Landing.css';
 
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
-    return <Redirect to="/dashboard" />;
+    return <Redirect to='/dashboard' />;
   }
-
   return (
-    <section className="landing">
-      <div className="landing-inner">
-        <h1 className="x-large font-effect-outline">Developer Connector</h1>
-        <p className="lead font-effect-outline">
-          Create a developer profile/portfolio, share posts and get help from
-          other developers
+    <div className='landing'>
+      <div className='landing-inner'>
+        <h1 className='landing-title'>Developer Connetor</h1>
+        <p className='landing-brief'>
+          A place where you can create a developer profile / portfolio, share
+          posts and get help from other developers
         </p>
-        <div className="buttons">
-          <Link to="/register" className="btn btn-danger btn-with-arrow">
-            Get Started <i className="fas fa-arrow-right"></i>
-          </Link>
-        </div>
+        <Link to='/login'>
+          <Button type='default' size='large'>
+            Get Started
+          </Button>
+        </Link>
       </div>
-    </section>
+    </div>
   );
 };
 

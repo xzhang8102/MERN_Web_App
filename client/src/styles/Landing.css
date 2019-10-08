@@ -1,0 +1,59 @@
+.landing {
+  background: url('../img/illustration_From_SAM_JI@dribbble.jpg') no-repeat
+    right center/80%;
+  /* background-image: url('../img/illustration_From_SAM_JI@dribbble.jpg');
+  background-size: 80%;
+  background-position: right center;
+  background-repeat: no-repeat; */
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.landing-inner {
+  background-color: rgb(254, 253, 254, 0.8);
+  padding: 1.5rem;
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-title {
+  font-family: 'Carter One', 'Times New Roman';
+  font-size: 2.5rem;
+  margin-bottom: 0.4rem;
+  color: #13384d;
+}
+
+.landing-brief {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .landing-inner {
+    width: 45%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .landing-inner {
+    padding: 1.8rem;
+  }
+
+  .landing-title {
+    font-size: 2rem;
+  }
+
+  .landing-brief {
+    font-size: 0.9rem;
+  }
+
+  .landing {
+    background: url('../img/illustration_From_SAM_JI@dribbble.jpg') no-repeat
+      right center/90%;
+  }
+}

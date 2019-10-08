@@ -1,7 +1,7 @@
 /* Global Styles */
 :root {
   --primary-color: #b1b4ea;
-  --dark-color: #051321;
+  --dark-color: #13384d;
   --light-color: #fefdfe;
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -232,16 +232,6 @@ img {
   opacity: 0.8;
 }
 
-.btn-with-arrow {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 12rem;
-  font-size: 1.1rem;
-  border-radius: 6px;
-  padding-right: 0.8rem;
-}
-
 .bg-light,
 .badge-light {
   border: #ccc solid 1px;
@@ -348,6 +338,10 @@ button {
   background: transparent;
 }
 
+.navbar h2 {
+  font-family: 'Carter One';
+}
+
 .navbar ul {
   display: flex;
 }
@@ -365,38 +359,6 @@ button {
 
 .navbar .welcome span {
   margin-right: 0.6rem;
-}
-
-/* Landing Page */
-.landing {
-  position: relative;
-  height: 100vh;
-  display: block;
-}
-
-.landing::after {
-  content: '';
-  background: url('../img/illustration_From_SAM_JI@dribbble.jpg') no-repeat
-    center/90%;
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
-
-.landing-inner {
-  color: #fff;
-  height: 100%;
-  width: 80%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 
 /* Profiles Page */
@@ -561,11 +523,6 @@ button {
     opacity: 0.5;
     background-size: 150%;
     background-position: 20% center;
-  }
-
-  .landing::after {
-    background-size: 150%;
-    opacity: 0.5;
   }
 
   .hide-sm {
